@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List Life Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <!-- ===================== GREETING SECTION ===================== -->
+    <section id="greeting" aria-label="Greeting">
+      <div class="card">
+        <p id="user-greeting">Good Morning,</p>
+        <h1>
+          <span
+            id="user-name"
+            contenteditable="true"
+            role="textbox"
+            aria-label="Your name (click to edit)"
+            spellcheck="false"
+          >Friend</span>
+        </h1>
+        <p id="current-time" aria-live="polite">00:00:00</p>
+        <p id="current-date" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ===================== TIMER SECTION ===================== -->
+    <section id="timer" aria-label="Focus Timer">
+      <div class="card">
+        <h2>Focus Timer</h2>
+        <div id="timer-ring" role="img" aria-label="Timer ring indicator">
+          <span id="timer-display">25:00</span>
+        </div>
+        <div class="timer-controls">
+          <button id="btn-start" type="button">Start</button>
+          <button id="btn-stop" type="button">Pause</button>
+          <button id="btn-reset" type="button">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TODO SECTION ===================== -->
+    <section id="todos" aria-label="To-Do List">
+      <div class="card">
+        <h2>Tasks</h2>
+
+        <!-- Add task input -->
+        <div class="todo-input-row">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Add a new task…"
+            aria-label="New task text"
+          />
+          <button id="btn-add-todo" type="button">Add</button>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="filter-tabs" role="tablist" aria-label="Task filter">
+          <button
+            class="filter-tab active"
+            data-filter="all"
+            type="button"
+            role="tab"
+            aria-selected="true"
+          >All</button>
+          <button
+            class="filter-tab"
+            data-filter="active"
+            type="button"
+            role="tab"
+            aria-selected="false"
+          >Active</button>
+          <button
+            class="filter-tab"
+            data-filter="completed"
+            type="button"
+            role="tab"
+            aria-selected="false"
+          >Completed</button>
+        </div>
+
+        <!-- Task count -->
+        <p id="task-count" aria-live="polite">0 tasks remaining</p>
+
+        <!-- Task list -->
+        <ul id="todo-list" aria-label="Task list"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== LINKS SECTION ===================== -->
+    <section id="links" aria-label="Quick Links">
+      <div class="card">
+        <h2>Quick Links</h2>
+
+        <!-- Links grid -->
+        <div id="links-grid" role="list" aria-label="Saved links"></div>
+
+        <!-- Add link inputs -->
+        <div class="link-input-row">
+          <input
+            type="text"
+            id="link-name-input"
+            placeholder="Link name"
+            aria-label="Link name"
+          />
+          <input
+            type="url"
+            id="link-url-input"
+            placeholder="https://example.com"
+            aria-label="Link URL"
+          />
+          <button id="btn-add-link" type="button">Add Link</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
